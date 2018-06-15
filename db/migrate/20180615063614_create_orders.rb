@@ -4,9 +4,9 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.integer :total, default: 0
       t.integer :user_id
       t.string :billing_name
-      t.string :billingj_address
+      t.string :billingj_address  
       t.string :shipping_name
-      t.string :shipping_address 
+      t.string :shipping_address
 
       t.timestamps
     end
