@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
     if @order.save
 
-      cuurent_cart.cart_items.each do |cart_item|
+      current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
         product_list.order = @order
         product_list.product_name = cart_item.product.title
@@ -18,17 +18,17 @@ class OrdersController < ApplicationController
       end
 
 
-      redirect_to order_path(@order)
+      redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
     end
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
   end
-  
+
 
   private
 
