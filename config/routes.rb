@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         post :return
       end
     end
-    
+
   end
 
   devise_for :users
@@ -32,6 +32,7 @@ end
    member do
      post :pay_with_alipay
      post :pay_with_wechat
+     post :apply_to_cancel 
    end
  end
 
