@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :products
+    resources :orders 
   end
 
   devise_for :users
@@ -24,12 +25,11 @@ end
      post :pay_with_alipay
      post :pay_with_wechat
    end
- end 
+ end
 
  namespace :account do
    resources :orders
  end
-
 
 
 end
